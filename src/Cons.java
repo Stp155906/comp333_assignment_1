@@ -10,7 +10,7 @@ public class Cons implements ImmutableList {
         this.tail = tail;
     }
 
-    // ... Other methods ...
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -26,26 +26,26 @@ public class Cons implements ImmutableList {
 
     @Override
     public int length() {
-        return 1 + tail.length();  // Length is 1 (current node) + length of the tail.
+        return 1 + tail.length();
     }
 
     @Override
     public int sum() {
-        return head + tail.sum();  // Sum is value of the current node + sum of the tail.
+        return head + tail.sum();
     }
 
     @Override
     public ImmutableList append(ImmutableList other) {
-        return new Cons(head, tail.append(other));  // Append other list to the tail and create a new Cons.
+        return new Cons(head, tail.append(other));
     }
 
     @Override
     public boolean contains(int value) {
-        return head == value || tail.contains(value);  // Current value matches OR tail contains the value.
+        return head == value || tail.contains(value);
     }
 
     @Override
     public String toString() {
-        return "Cons(" + head + ", " + tail.toString() + ")";  // Representing Cons as a string.
+        return "Cons(" + head + ", " + tail.toString() + ")";
     }
 }

@@ -1,31 +1,42 @@
 public class Nil implements ImmutableList {
-
     public Nil() {}
 
-    // ... Other methods ...
+    public boolean equals(final Object other) {
+        return other instanceof Nil;
+    } // equals
+
+    public String toString() {
+        return "Nil";
+    } // toString
+
+    public int hashCode() {
+        return 0;
+    } // hashCode
 
     @Override
     public int length() {
-        return 0;  // Nil has length 0.
+        return 0;
+
+
     }
 
     @Override
     public int sum() {
-        return 0;  // Nil has a sum of 0.
+        return 0;
+
+
     }
 
     @Override
     public ImmutableList append(ImmutableList other) {
-        return other;  // Appending any list to Nil gives the other list.
+        return other;
+
+
     }
 
     @Override
     public boolean contains(int value) {
-        return false;  // Nil doesn't contain any value.
-    }
+        return false;
 
-    @Override
-    public String toString() {
-        return "Nil";  // Representing Nil as a string.
     }
-}
+} // Nil
